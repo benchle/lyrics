@@ -257,12 +257,17 @@
     <header>
       <div class="header-inner">
         <div class="logo-text">Benchle Lyrics</div>
-        <select name="album" id="album">
-          <option value="FEE">---FEE---</option>
-          <option value="SchizoFEEnie">SchizoFEEnie</option>
+        <select name="album" id="album" onchange="seiteWechseln(this)">
+          <option value="">Album auswählen...</option>
+          <option value="https://benchle.github.io/lyrics/FEE/alben.html">---FEE---</option>
+          <option value="https://benchle.github.io/lyrics/FEE/SchizoFEEnie/lieder.html">SchizoFEEnie</option>
         </select>
       </div>
     </header>
+    <h1>Welcome to Benchle Lyrics!</h1>
+    <h3>Here you can see the lyrics for different songs!</h3>
+    <p>Just navigate this website through the links below or instantly go to your favorite album via the dropdown menu on the top of the page!</p>
+    <a href="https://benchle.github.io/lyrics/FEE/alben.html">FEE</a>
     <footer> <!-- die scheiße klappt nie -->
       <div class="footer-inner">
         <div class="footer-logo">Benchle</div>
@@ -275,5 +280,13 @@
         <div class="footer-copy">© 2026 Benchle · Anonymous · Free · For everyone</div>
       </div>
     </footer>
+
+    <script>
+      function seiteWechseln(dropdown) {
+          if (dropdown.value !== "") {
+              window.location.href = dropdown.value;
+          }
+      }
+    </script>
   </body>
 </html>
